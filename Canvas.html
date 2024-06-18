@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!-- Below is the syntax of CSS for Styling them HTML -->
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+/* Below is the sytax to give the color to the box which we made */
+    body{
+        background-color: #333;
+        color:white;
+        /* syntax to put the box in the centre is mentioned below */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+/* Below is the syntax to style our canvas */
+    canvas{
+        border-radius: 5px;
+        background-color: #ffffff;
+        width: 80%;
+        height: 80%;
+
+    }
+</style>
+<body>
+    <!-- Below is the syntax to define the canvas and we have to give ID to canvas first -->
+    <canvas id="canvas" width="600" height="600" ></canvas>
+</body>
+<!-- Now below we are creating a script into HTML which require basic JS -->
+ <script>
+    // Below is the syntax to fetch the data from ID which we made earlier in start
+    const canvas = document.getElementById('canvas')
+    const ctx = canvas.getContext('2d')
+    canvas.width = window.innerWidth;
+    // Whenever we need to give color in any box the syntax is mentioned below in canvas here we are filling rectangle
+    ctx.fillStyle = "pink";
+    // Now we need to speficy below the co-ordinates of rectangle in starting we assume 0-X axis, 0-Y axis, 150 - width, 100 - height
+    ctx.fillRect(20,20,80,50)
+    
+    // ctx.fillStyle = "blue";
+    // ctx.fillRect(120,20,80,30)
+
+    // creating the strokes below - stokes means a bordered rectangle
+    ctx.lineWidth = 5;
+    ctx.strokeStyle = "green"
+    ctx.strokeRect(300,20,80,30)
+// Creating below another stoke rectangle with Red color and light width
+    ctx.lineWidth = 2;
+    ctx.strokeStyle = "red"
+    ctx.strokeRect(200,20,80,30)
+
+    // To clear the rectangle form Inide the syntax is below
+    ctx.clearRect(25,25,70,40)
+
+    // Fill text syntax below
+    ctx.font= '30 Arial'
+    ctx.fillStyle = "purple"
+    ctx.fillText ('Hey there',350,300)
+    ctx.strokeText("Hellow World", 500,300)
+
+    // Below is the syntax to play with the lines and the parameters are mentioned below of it (Rectangle syntax)
+
+    // ctx.beginPath();
+    // ctx.moveTo(200,150);
+    // ctx.lineTo(400,150);
+    // ctx.lineTo(400,250);
+    // ctx.lineTo(200,250);
+    // ctx.lineTo(200,150)
+
+
+    // ctx.lineWidth = 2;
+    // ctx.strokeStyle = "red";
+    // ctx.stroke()
+    // ctx.fillStyle = "blue";
+    // ctx.fill()
+
+    // Below is the syntax mentioned to create the Circle, X-axis, Y-axis, Radius, formula to create full circle
+
+    ctx.beginPath();
+    ctx.arc(600,150,70,0, Math.PI*2)
+    ctx.strokeStyle = "pink";
+    ctx.stroke()
+    ctx.fillStyle = "blue";
+    ctx.fill()
+// Below is the syntax for Traingle bnaya full dimaag lga ke move means coordinates jha se line sure hogi
+    ctx.beginPath();
+    ctx.moveTo(250,400);
+    ctx.lineTo(400,250);
+    ctx.lineTo(600,400);
+    ctx.lineTo(250,400);
+    
+    ctx.lineWidth = 2;
+    ctx.strokeStyle = "red";
+    ctx.stroke()
+    ctx.fillStyle = "green";
+    ctx.fill()
+</script>
+</html>
